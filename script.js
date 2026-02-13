@@ -17,4 +17,7 @@ form.addEventListener("submit", function (event) {
   const teamName = teamSelect.selectedOptions[0].text;
 
   console.log(name, teamName);
+  //increment count
+  count++;
+  console.log("Total check-ins: " + count);
 });
