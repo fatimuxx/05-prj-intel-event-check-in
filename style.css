@@ -25,7 +25,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
@@ -199,9 +200,10 @@ button .fas {
 
 #attendeeCount {
   color: #0071c5;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0 2px;
+  white-space: nowrap;
 }
 
 .attendance-header i {
@@ -256,6 +258,16 @@ button .fas {
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
+}
+
+.celebration-message {
+  background-color: #ecfdf3;
+  color: #166534;
+}
+
+.winner-name {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 /* Counter */
