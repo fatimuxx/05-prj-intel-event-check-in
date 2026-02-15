@@ -6,6 +6,8 @@ const attendeeCount = document.getElementById("attendeeCount");
 const progressBar = document.getElementById("progressBar");
 const greeting = document.getElementById("greeting");
 const checkInBtn = document.getElementById("checkInBtn");
+const attendeeList = document.getElementById("attendeeList");
+const emptyAttendeeMessage = document.getElementById("emptyAttendeeMessage");
 
 function getWinningTeamName() {
   const waterCount = parseInt(
@@ -68,6 +70,25 @@ form.addEventListener("submit", function (event) {
   const teamCounter = document.getElementById(team + "Count");
   console.log(teamCounter);
   teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
+
+  if (emptyAttendeeMessage && emptyAttendeeMessage.parentElement) {
+    emptyAttendeeMessage.remove();
+  }
+
+  const attendeeItem = document.createElement("li");
+  attendeeItem.className = "attendee-item";
+
+  const attendeeName = document.createElement("span");
+  attendeeName.className = "attendee-list-name";
+  attendeeName.textContent = name;
+
+  const attendeeTeam = document.createElement("span");
+  attendeeTeam.className = "attendee-list-team";
+  attendeeTeam.textContent = teamName;
+
+  attendeeItem.appendChild(attendeeName);
+  attendeeItem.appendChild(attendeeTeam);
+  attendeeList.appendChild(attendeeItem);
 
   //show welcome message
   const message = `Welcome, ${name} from ${teamName}!`;
